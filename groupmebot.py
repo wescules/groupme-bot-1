@@ -12,11 +12,11 @@ import time
 # Some variables that will be used in making calls to the APIs
 location_name = 'Houston, TX'
 location_coords = { 'x': '29.7199', 'y': '-95.3422' }
-request_params = { 'token': 'PIXbVWA2v51ooRHmEWi7ju3ZfoaowGAae1QbAC7e'}
+request_params = { 'token': 'GROUPMEtOKEN'}
 
 def post(to_send):
     # Send the response to the group
-        post_params = { 'bot_id' : '62c7592d10c657125a2a6e3f45', 'text': to_send }
+        post_params = { 'bot_id' : 'INSERT YOUR BOT ID', 'text': to_send }
         requests.post('https://api.groupme.com/v3/bots/post', params = post_params)
         request_params['since_id'] = message['id']
 
@@ -27,8 +27,8 @@ def post(to_send):
 
 
 while True:
-
-    response = requests.get('https://api.groupme.com/v3/groups/21636980/messages', params = request_params)
+    #INSERT GROUP ID
+    response = requests.get('https://api.groupme.com/v3/groups/INSERT GROUP ID/messages', params = request_params)
 
     # If there are new messages, check whether any of them are making queries to the bot
     if (response.status_code == 200):
